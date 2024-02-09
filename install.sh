@@ -1,7 +1,6 @@
-###################################
-# Prerequisites
+#!/bin/sh
+# Install the azure-cli tool on Ubuntu or other Debian-based OS,
 
-# Update the list of packages
 sudo apt-get update
 
 # Install pre-requisite packages.
@@ -19,9 +18,5 @@ sudo dpkg -i packages-microsoft-prod.deb
 # Delete the Microsoft repository keys file
 rm packages-microsoft-prod.deb
 
-# Update the list of packages after we added packages.microsoft.com
 sudo apt-get update
-
-###################################
-# Install PowerShell
 sudo apt-get install -y powershell
