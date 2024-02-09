@@ -6,9 +6,6 @@ sudo apt-get update
 # Install pre-requisite packages.
 sudo apt-get install -y wget apt-transport-https software-properties-common
 
-# Get the version of Ubuntu
-AZ_REPO=$(lsb_release -cs)
-
 wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
 
 # Register the Microsoft repository keys
