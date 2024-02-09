@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Install the azure-cli tool on Ubuntu or other Debian-based OS,
 
 sudo apt-get update
@@ -9,8 +9,7 @@ sudo apt-get install -y wget apt-transport-https software-properties-common
 # Get the version of Ubuntu
 AZ_REPO=$(lsb_release -cs)
 
-# Download the Microsoft repository keys
-wget -q https://packages.microsoft.com/config/ubuntu/$AZ_REPO/packages-microsoft-prod.deb
+wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
 
 # Register the Microsoft repository keys
 sudo dpkg -i packages-microsoft-prod.deb
