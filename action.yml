@@ -1,4 +1,5 @@
 name: 'Install powershell'
+description: 'Install powershell''
 runs:
   using: "composite"
   steps:
@@ -6,4 +7,3 @@ runs:
       shell: bash
     - run: ${{ github.action_path }}/install.sh
       shell: bash
-      
