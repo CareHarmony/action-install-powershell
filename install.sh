@@ -8,10 +8,10 @@ sudo apt-get update
 sudo apt-get install -y wget apt-transport-https software-properties-common
 
 # Get the version of Ubuntu
-source /etc/os-release
+AZ_REPO=$(lsb_release -cs)
 
 # Download the Microsoft repository keys
-wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/$AZ_REPO/packages-microsoft-prod.deb
 
 # Register the Microsoft repository keys
 sudo dpkg -i packages-microsoft-prod.deb
