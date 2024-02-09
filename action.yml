@@ -1,5 +1,5 @@
 name: 'Install powershell'
-description: 'Install powershell''
+description: 'Install powershell'
 runs:
   using: "composite"
   steps:
