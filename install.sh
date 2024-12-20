@@ -1,18 +1,23 @@
 #!/bin/bash
-# Install the azure-cli tool on Ubuntu or other Debian-based OS,
 
-sudo apt-get update
+if [ "$WITH_SUDO" == "true" ]; then
+    SUDO="sudo"
+else
+    SUDO=""
+fi
+
+${SUDO} apt-get update
 
 # Install pre-requisite packages.
-sudo apt-get install -y wget apt-transport-https software-properties-common
+${SUDO} apt-get install -y wget apt-transport-https software-properties-common lsb-release apt-utils
 
 wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
 
 # Register the Microsoft repository keys
-sudo dpkg -i packages-microsoft-prod.deb
+${SUDO} dpkg -i packages-microsoft-prod.deb
 
 # Delete the Microsoft repository keys file
 rm packages-microsoft-prod.deb
 
-sudo apt-get update
-sudo apt-get install -y powershell
+${SUDO} apt-get update
+${SUDO} apt-get install -y powershell
